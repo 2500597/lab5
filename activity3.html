@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Activity 3</title>
+</head>
+<body>
+
+<h2>User Info</h2>
+<div id="userData"></div>
+
+<script>
+
+fetch("https://jsonplaceholder.typicode.com/users/1")
+.then(function(res){
+    return res.json();
+})
+.then(function(data){
+    document.getElementById("userData").innerHTML =
+    "Name: mirza saud <br>" +
+    "Email: mirzasaud3011@gmail.com";
+})
+.catch(function(err){
+    console.log(err);
+});
+
+</script>
+
+</body>
+</html>

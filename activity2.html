@@ -1,0 +1,18 @@
+<input type="text" id="nameInput" placeholder="Enter Name">
+<button onclick="saveName()">Save</button>
+<h3 id="displayName"></h3>
+<script>
+function saveName() {
+let name = document.getElementById("nameInput").value;
+localStorage.setItem("name", name);
+showName();
+}
+function showName() {
+let storedName = localStorage.getItem("name");
+if(storedName) {
+document.getElementById("displayName").innerText = "Welcome " +
+storedName;
+}
+}
+window.onload = showName;
+</script>
